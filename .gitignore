@@ -1,0 +1,58 @@
+# Ignore secret environment files
+.env
+*.env
+.env.local
+.env.*.local
+
+# Vaultwarden secrets
+data/
+*.db
+*.db-wal
+*.db-shm
+rsa_key*
+
+# Certificates and SSH keys for VPN, Firewall, and Web Server
+certs/
+*.pem
+*.crt
+*.key
+*.p12
+*.pub
+
+# Docker & Configuration exclusions
+# Exclude local-only runtime data while keeping the docker-compose.yml files public
+**/docker-volumes/
+**/data-storage/
+
+# AI & Data Storage (OLLAMA / BTC / MEDIA)
+# Ignore heavy local AI models pulled by Ollama
+.ollama/
+**/ollama/models/
+
+# Ignore blockchain ledger data running a full BTC node/miner tracking data
+**/bitcoin/blocks/
+**/bitcoin/chainstate/
+
+# Ignore massive media folders
+**/media/
+**/movies/
+**/tv/
+**/downloads/
+
+# Ignore local IDE and system files
+.vscode/
+.idea/
+.DS_Store
+thumbs.db
+
+
+# Virtualization & OS Backups (PROXMOX/ESXi)
+# Ignore massive backups or ISOs or disk backups
+*.iso
+*.img
+*.qcow2
+*.vmdk
+*.ova
+*.tar
+*.gz
+*.zip
